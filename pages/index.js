@@ -1,10 +1,15 @@
 import { supabase } from "../utils/supabase.js";
 import Link from "next/link";
-
+import {useUser} from "./context/user.js";
 
 export default function Home({todos}) {
     console.log(todos)
-    console.log(supabase.auth.user());
+    // console.log(supabase.auth.user());
+
+    const {user} = useUser();
+
+    console.log({user});
+
     return (
       <div className="w-full max-w-3xl mx-auto my-16 px-2">
         <h1>Hello world!</h1>
